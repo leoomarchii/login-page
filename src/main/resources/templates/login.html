@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
+    <title>Login</title>
+</head>
+<body>
+    <div>
+        <h2>Login</h2>
+    </div>
+    <div>
+        <div class="col-3">
+            <form th:method="post" th:action="@{/user/login}" th:object="${userForm}">
+                <div>
+                    <label>Username</label>
+                    <br>
+                    <input type="text" th:field="*{username}">
+                </div>
+                <div>
+                    <label>Password</label>
+                    <br>
+                    <input type="password" th:field="*{password}">
+                </div>
+                <br>
+                <div>
+                    <input class="btn btn-primary" type="submit" value="Login">
+                    <a class="btn btn-primary" th:href="@{/}">Home</a>
+                </div>
+            </form>
+        </div>
+        <div class="col-3 my-2">
+            <div class="alert alert-danger" role="alert" th:if="${notfound != null}"> 
+                    Username doesn't exist!
+            </div>
+        </div>
+    </div>
+</body>
+</html>

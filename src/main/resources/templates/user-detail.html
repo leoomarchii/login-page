@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css">
+    <title>User Detail</title>
+</head>
+<body>
+    <div class="col-3">
+        <div>
+            <h2 th:text="'Welcome, ' + ${user.name + ' ' + user.surname}"></h2>
+
+            <div>
+                <b>Username: </b><span th:text="${user.username}"></span>
+            </div>
+
+            <div>
+                <b>Email: </b><span th:text="${user.email}"></span>
+            </div>
+
+            <br>
+
+            <div>
+                <a class="btn btn-primary" th:href="@{/}">Logout</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
